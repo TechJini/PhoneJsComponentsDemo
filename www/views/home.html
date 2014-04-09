@@ -1,0 +1,8 @@
+﻿<div data-options="dxView : { name: 'home', title: 'Home' } " >
+    <div class="home-view"  data-options="dxContent : { targetPlaceholder: 'content' } " >
+    	<div data-bind="dxList: { dataSource: dataSource,autoPagingEnabled:false}">
+            <div class="listItem" data-options="dxTemplate:{ name:'item' }" data-bind=" text: name ,dxAction: '#{page}'" >
+			</div>
+        </div>
+    </div>
+</div>

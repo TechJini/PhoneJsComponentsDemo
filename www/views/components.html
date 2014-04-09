@@ -1,0 +1,343 @@
+
+<div data-options="dxView : { name: 'datepicker'   , title: 'DateTime Picker'    } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>DateTime Picker (In progress)</p>
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Date</div>
+                <div class="dx-field-value">
+                    <div  id="dateContainer" data-bind="dxDateBox: {  value: date, format: 'date' }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Time</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxDateBox: { value: time,  format: 'time', useNativePicker:!0 }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">DateTime</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxDateBox: { value: dateTime,  format: 'datetime' }"></div>
+                </div>
+            </div>
+            <div data-bind="dxButton: { text: 'Click me', clickAction: buttonClicked }"></div>
+        </div>
+    </div>
+</div>
+<div data-options="dxView : { name: 'spinner'    , title: 'ProgressBar'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div id="button" data-bind="dxButton:{text: 'Click To Show ProgressBar', clickAction: startLoading}"></div>
+        <div data-bind="dxLoadPanel:{message: 'Loading...', visible: loadPanelVisible }"></div>
+
+
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'tabview'    , title: 'TabView'    } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>TabView</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'searchbar'    , title: 'SearchBar/AutoComplete'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>SearchBar/AutoComplete</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'accordion'    , title: 'Expandable ListView/Accordion View'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>Expandable ListView/Accordion View</p>
+    </div>
+</div>
+
+
+
+<div data-options="dxView : { name: 'gridview'   , title: 'GridView/Collection view'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>GridView/Collection view</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'scrollview'   , title: 'ScrollView'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>ScrollView</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'viewpager'    , title: 'View Pager'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>View Pager</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'alert'    , title: 'Dialogs'    } " >
+        <div class="navigation" data-options="dxContent : { targetPlaceholder: 'content' } " >
+      <div class="content" data-bind="dxScrollView: { }">
+        <div class="dx-fieldset">            
+            <div class="dx-field">
+                <div class="dx-field-label">Popup</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: popup.showPopup }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Action Sheet</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: actionsheet.showActionSheet }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Popover</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: popover.toggle }" class="toggle-popover-button"></div>
+                </div>
+            </div>
+        </div>    
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Alert</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.alert }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Notify</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.notify }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Confirm</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.confirm }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Custom dialog</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.custom.show }"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ko with: toast -->
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Info</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: showInfo }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Error</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: showError }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Success</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: showSuccess }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Warning</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: showWarning }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Custom</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: showCustom }"></div>
+                </div>
+            </div>
+        </div>
+
+             
+        <div data-bind="dxToast: { message: 'Sample info message', type: 'info', visible: toastInfoVisible }"></div>
+        <div data-bind="dxToast: { message: 'Sample error message', type: 'error', visible: toastErrorVisible }"></div>
+        <div data-bind="dxToast: { message: 'Sample success message', type: 'success', visible: toastSuccessVisible }"></div>
+        <div data-bind="dxToast: { message: 'Sample warning message', type: 'warning', visible: toastWarningVisible }"></div>
+        <div data-bind="dxToast: { type: 'custom', visible: toastCustomVisible }">
+            <div class="dx-icon dx-icon-user"></div>
+            New user added!
+        </div>
+        <!-- /ko -->
+
+      </div>
+    <div data-bind="dxLoadPanel: { message: 'Please wait ...', visible: loadPanel.visible }"></div>
+    <div data-bind="dxPopup: { height: 'auto', visible: popup.visible }">
+        <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+            <h2>Login</h2>
+        </div>
+        <div data-options="dxTemplate : { name: 'content' } ">
+            <div class="login-form">
+                <div data-bind="dxTextBox: { placeholder: 'Login' }"></div>
+                <div data-bind="dxTextBox: { mode: 'password', placeholder: 'Password' }"></div>                            
+                <div data-bind="dxButton: { text: 'Sign in', clickAction: popup.hidePopup }"></div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="dxActionSheet: { title: 'Action Sheet', items: actionsheet.items, showTitle: true, visible: actionsheet.visible }"></div>
+    
+    <div data-bind="dxPopover: { width: 200, height: 'auto', visible: popover.visible, target: '.toggle-popover-button' }">
+        <div data-bind="dxList: { items: popover.colors, itemClickAction: popover.close }"></div>
+    </div>
+    
+   
+        
+        
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'rating'   , title: 'Rating Bar'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>Rating Bar</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'seekbar'    , title: 'Seek bar'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Slider</div>
+                    <div class="dx-field-value" data-bind="dxSlider: { value: dxSlider.value, min: 0, max: 10 }"></div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'picker'   , title: 'Dropdown'    } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Dropdown</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxSelectBox: { value: dxSelectbox.value, dataSource: dxSelectbox.data }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div data-options="dxView : { name: 'edittext'   , title: 'EditText'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="dx-fieldset">
+          <div class="dx-field">    
+            <div class="dx-field-label">Maxlength</div>    
+            <div class="dx-field-value" data-bind="
+              dxTextBox: { maxLength: length, placeholder: lengthDescription }"></div>  
+          </div>
+          <div class="dx-field">
+            <div class="dx-field-label">Password</div>
+            <div class="dx-field-value" data-bind="
+              dxTextBox: { mode: passMode, placeholder: secretDescription }"></div>  
+          </div>
+            <div class="dx-field">
+            <div class="dx-field-label">Read-only</div>
+            <div class="dx-field-value" data-bind="
+              dxTextBox: { readOnly: readonly, value: readonlyDescription }"></div>  
+          </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'switch'   , title: 'Switches'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Switch</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxSwitch: { value: dxSwitch.value }"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'radio'    , title: 'Radio Group'    } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">RadioGroup</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxRadioGroup: { items: dxRadioGroup.items}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'checkbox'    , title: 'Check Box'    } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Checkbox</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxCheckBox: { checked: dxCheckbox.checked }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'menu'   , title: 'Menu/Application Bar'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>Menu/Application Bar</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'animation'    , title: 'Animations'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>Animations</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'pulltorefresh'    , title: 'Pull to refresh'    } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <p>Pull to refresh</p>
+    </div>
+</div>
+
+<div data-options="dxView : { name: 'button'   , title: 'Button'   } " >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="dx-fieldset button">
+            <div class="dx-field">
+                <div class="dx-field-label">Icon only</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: {icon: 'tips'}"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Icon and text</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: {icon: 'tips', text: 'Click me'}"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Text only</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: {text: 'Click me'}"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Danger</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: {text: 'Click me', type: 'danger'}"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Success</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: {text: 'Click me', type: 'success'}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

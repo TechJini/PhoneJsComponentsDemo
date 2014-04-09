@@ -1,0 +1,57 @@
+<div data-options="dxView : { name: 'listview', title: 'ListView' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxList: { items: [
+                { name: 'Pull To Refresh', page: 'pullToRefreshView' },
+                { name: 'Section Headers', page: 'sectionHeadersView' },
+                { name: 'Search Bar', page: 'searchBarView' }
+            ] }">
+            <div data-options="dxTemplate : { name: 'item' }" data-bind="text: name,dxAction: '#{page}'" ></div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView :{ title: 'Pull To Refresh', name: 'pullToRefreshView'}" >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxList: { dataSource: pullToRefreshDataSource,autoPagingEnabled:false, pullRefreshEnabled: true,pullRefreshAction:pulledToRefresh}">
+            <div class="listItem" data-options="dxTemplate:{ name:'item' }">
+                <div data-options="dxTemplate : { name: 'item' }" >
+                    <img class="listClassimg" data-bind="attr: { src: 'http://demos.telerik.com/kendo-ui/content/web/foods/'+ProductID+'.jpg' }" />
+                    <h3 class="listClassh3" data-bind="text: ProductName"></h3>
+                    <p class="listClassp" data-bind="text: UnitPrice"> </p>
+                    <div class="listClassbutton" data-bind="dxButton: { text: 'Click me', clickAction:processClick}"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView :{ title: 'Section Headers', name: 'sectionHeadersView'}" >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxList: { dataSource: sectionHeadersDataSource,grouped: true}">
+            <div class="listItem" data-options="dxTemplate:{ name:'item' }">
+                <div data-options="dxTemplate : { name: 'item' }" >
+                    <img class="listClassimg" data-bind="attr: { src: 'http://demos.telerik.com/kendo-ui/content/web/foods/'+ProductID+'.jpg' }" />
+                    <h3 class="listClassh3" data-bind="text: ProductName"></h3>
+                    <p class="listClassp" data-bind="text: UnitPrice"> </p>
+                    <div class="listClassbutton" data-bind="dxButton: { text: 'Click me', clickAction:processClick}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-options="dxView :{ title: 'Search Bar', name: 'searchBarView'}" >
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxTextBox: { mode: 'search', value: '',placeholder: 'Search...', valueUpdateAction:searchKeyChanged, valueUpdateEvent: 'search change keyup'}"></div>
+         <div data-bind="dxList: { dataSource: searchBarDataSource }">
+            <div class="listItem" data-options="dxTemplate:{ name:'item' }">
+                <div data-options="dxTemplate : { name: 'item' }" >
+                    <img class="listClassimg" data-bind="attr: { src: 'http://demos.telerik.com/kendo-ui/content/web/foods/'+ProductID+'.jpg' }" />
+                    <h3 class="listClassh3" data-bind="text: ProductName"></h3>
+                    <p class="listClassp" data-bind="text: UnitPrice"> </p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
